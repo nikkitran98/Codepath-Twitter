@@ -15,6 +15,7 @@
 @end
 
 @implementation ComposeViewController
+
 - (IBAction)closeAction:(id)sender {
      [self dismissViewControllerAnimated:true completion:nil];
 }

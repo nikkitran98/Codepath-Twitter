@@ -37,4 +37,36 @@
     self.retweetCount.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.favoriteCount.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
 }
+
+- (IBAction)didTapFavorite:(id)sender {
+    
+    // updates the local tweet model
+    if (self.tweet.favorited) {
+        self.tweet.favorited = NO;
+        self.tweet.favoriteCount -= 1;
+    }
+    else {
+        self.tweet.favorited = YES;
+        self.tweet.favoriteCount += 1;
+    }
+    
+    
+    //update cell UI
+    [self refreshData];
+    
+    // send a POST request to the POST favorites/create endpoint
+}
+
+- (IBAction)didTapRetweet:(id)sender {
+    // updates the local tweet model
+    self.tweet.retweeted;
+    self.tweet.retweetCount;
+}
+
+- (void)refreshData {
+    self.retweetCount.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
+    self.favoriteCount.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
+}
+
+
 @end
