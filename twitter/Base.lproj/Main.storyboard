@@ -225,6 +225,7 @@
                                             <outlet property="retweetCount" destination="OkJ-bh-hFy" id="iYR-t1-hNo"/>
                                             <outlet property="screenName" destination="jLW-Ng-TPt" id="kcG-6M-SX2"/>
                                             <outlet property="tweetText" destination="bYO-mj-5wB" id="sKQ-07-MAk"/>
+                                            <segue destination="wBf-bm-RFU" kind="presentation" id="Jbn-wo-1zK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -258,6 +259,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="36.431784107946029"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wzT-Yr-pXg">
+            <objects>
+                <viewController id="wBf-bm-RFU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E7H-u9-PKl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="j6P-Ax-vaK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZD-mB-ckz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653" y="733"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="IAr-iE-wFf">
