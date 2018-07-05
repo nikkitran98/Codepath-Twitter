@@ -8,6 +8,7 @@
 
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "APIManager.h"
 
 @implementation TweetCell
 
@@ -36,6 +37,7 @@
     
     self.retweetCount.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.favoriteCount.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
+    
 }
 
 - (IBAction)didTapFavorite:(id)sender {
@@ -44,23 +46,69 @@
     if (self.tweet.favorited) {
         self.tweet.favorited = NO;
         self.tweet.favoriteCount -= 1;
+        
+        // send a POST request to the POST favorites/create endpoint
+        [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                NSLog(@"Error unfavoriting tweet: %@", error.localizedDescription);
+            }
+            else{
+                NSLog(@"Successfully unfavorited the following Tweet: %@", tweet.text);
+            }
+        }];
     }
     else {
         self.tweet.favorited = YES;
         self.tweet.favoriteCount += 1;
+        
+        // send a POST request to the POST favorites/create endpoint
+        [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
+            }
+            else{
+                NSLog(@"Successfully favorited the following Tweet: %@", tweet.text);
+            }
+        }];
     }
-    
     
     //update cell UI
     [self refreshData];
-    
-    // send a POST request to the POST favorites/create endpoint
 }
 
 - (IBAction)didTapRetweet:(id)sender {
     // updates the local tweet model
-    self.tweet.retweeted;
-    self.tweet.retweetCount;
+    if (self.tweet.retweeted) {
+        self.tweet.retweeted = NO;
+        self.tweet.retweetCount -= 1;
+        
+        // send a POST request to the POST favorites/create endpoint
+        [[APIManager shared] unretweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                NSLog(@"Error unrewteeting tweet: %@", error.localizedDescription);
+            }
+            else{
+                NSLog(@"Successfully unretweeted the following Tweet: %@", tweet.text);
+            }
+        }];
+    }
+    else {
+        self.tweet.retweeted = YES;
+        self.tweet.retweetCount += 1;
+        
+        // send a POST request to the POST favorites/create endpoint
+        [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                NSLog(@"Error retweeted tweet: %@", error.localizedDescription);
+            }
+            else{
+                NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
+            }
+        }];
+    }
+    
+    //update cell UI
+    [self refreshData];
 }
 
 - (void)refreshData {
