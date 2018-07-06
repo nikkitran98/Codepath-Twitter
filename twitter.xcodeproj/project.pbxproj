@@ -18,6 +18,8 @@
 		6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790520BCC0380085BC29 /* LoginViewController.m */; };
 		6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790820BCC04D0085BC29 /* TimelineViewController.m */; };
 		CE2B2E2920EEE8AF0077E77F /* TweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B2E2820EEE8AF0077E77F /* TweetViewController.m */; };
+		CE2B2E2C20F021ED0077E77F /* TweetsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B2E2B20F021ED0077E77F /* TweetsTabBarController.m */; };
+		CE2B2E2F20F02A0F0077E77F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B2E2E20F02A0F0077E77F /* ProfileViewController.m */; };
 		CEF190DC20EAC8DD00246D9D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF190DB20EAC8DD00246D9D /* User.m */; };
 		CEF190DF20EACAEC00246D9D /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF190DE20EACAEC00246D9D /* Tweet.m */; };
 		CEF190E220EAD94400246D9D /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF190E120EAD94400246D9D /* TweetCell.m */; };
@@ -46,6 +48,10 @@
 		75895B6507775E8AFBEEA2D9 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2B2E2720EEE8AF0077E77F /* TweetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetViewController.h; sourceTree = "<group>"; };
 		CE2B2E2820EEE8AF0077E77F /* TweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetViewController.m; sourceTree = "<group>"; };
+		CE2B2E2A20F021ED0077E77F /* TweetsTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetsTabBarController.h; sourceTree = "<group>"; };
+		CE2B2E2B20F021ED0077E77F /* TweetsTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetsTabBarController.m; sourceTree = "<group>"; };
+		CE2B2E2D20F02A0F0077E77F /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CE2B2E2E20F02A0F0077E77F /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CEF190DA20EAC8DD00246D9D /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CEF190DB20EAC8DD00246D9D /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CEF190DD20EACAEC00246D9D /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -154,6 +160,10 @@
 				CEF190E420EC248C00246D9D /* ComposeViewController.m */,
 				CE2B2E2720EEE8AF0077E77F /* TweetViewController.h */,
 				CE2B2E2820EEE8AF0077E77F /* TweetViewController.m */,
+				CE2B2E2A20F021ED0077E77F /* TweetsTabBarController.h */,
+				CE2B2E2B20F021ED0077E77F /* TweetsTabBarController.m */,
+				CE2B2E2D20F02A0F0077E77F /* ProfileViewController.h */,
+				CE2B2E2E20F02A0F0077E77F /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -285,7 +295,9 @@
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
 				CE2B2E2920EEE8AF0077E77F /* TweetViewController.m in Sources */,
 				CEF190DF20EACAEC00246D9D /* Tweet.m in Sources */,
+				CE2B2E2C20F021ED0077E77F /* TweetsTabBarController.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
+				CE2B2E2F20F02A0F0077E77F /* ProfileViewController.m in Sources */,
 				6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */,
 				6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */,
 				6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */,

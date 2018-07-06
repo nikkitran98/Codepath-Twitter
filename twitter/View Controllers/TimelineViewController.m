@@ -12,6 +12,8 @@
 #import "ComposeViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "TweetViewController.h"
+#import "Tweet.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -28,7 +30,8 @@
     // getting data from view controller
     self.tweetView.dataSource = self;
     self.tweetView.delegate = self;
-    self.tweetView.rowHeight = 150;
+    
+    //self.tweetView.rowHeight = 150;
     
     self.tweets = [[NSMutableArray alloc] init];
     
@@ -100,6 +103,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"ComposeTweet"]){
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = [segue destinationViewController];
+        composeController.delegate = self;
+    }
+    else if([segue.identifier isEqual:@"tweetDetails"]) {
+        TweetViewController *tweetViewController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tweetView indexPathForCell:tappedCell];
+        Tweet *tweet = self.tweets[indexPath.row];
+        tweetViewController.tweet = tweet;
+    }
+    
+    
 }
 
 

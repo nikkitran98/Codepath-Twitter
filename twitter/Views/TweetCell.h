@@ -11,6 +11,7 @@
 
 
 @interface TweetCell : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *screenName;
@@ -19,7 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *retweetCount;
 @property (strong, nonatomic) IBOutlet UILabel *favoriteCount;
 @property (strong, nonatomic) IBOutlet NSDate *timeAgoDate;
-
 
 @property (strong, nonatomic) Tweet *tweet;
 

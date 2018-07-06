@@ -33,8 +33,8 @@
     self.tweetText.text = self.tweet.text;
     
     self.profileImage.image = nil;
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     [self.profileImage setImageWithURL:tweet.user.profileURL];
-    
     
     self.retweetCount.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.favoriteCount.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];

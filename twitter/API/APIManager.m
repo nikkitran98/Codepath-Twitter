@@ -74,6 +74,18 @@ static NSString * const consumerSecret = @"3WDhhPn4uI2s4dw1cceRrIzGCGShF37qQWYtb
     }];
 }
 
+- (void)getAccountDetails:(void(^)(User *user, NSError *error))completion {
+    [self GET:@"1.1/account/verify_credentials.json"
+   parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable userDictionary) {
+       // Success
+       User *user  = [[User alloc] initWithDictionary:userDictionary];
+       completion(user, nil);
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       // There was a problem
+       completion(nil, error);
+   }];
+}
+
 - (void)favorite:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
     
     NSString *urlString = @"1.1/favorites/create.json";

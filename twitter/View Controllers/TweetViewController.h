@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
+#import "TweetCell.h"
 
 @interface TweetViewController : UIViewController
 
@@ -18,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *retweetCount;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteCount;
 @property (strong, nonatomic) IBOutlet NSDate *timeAgoDate;
+
+@property Tweet *tweet;
 
 @end
