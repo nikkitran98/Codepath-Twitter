@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *tweetText;
 @property (strong, nonatomic) IBOutlet UILabel *retweetCount;
 @property (strong, nonatomic) IBOutlet UILabel *favoriteCount;
+@property (strong, nonatomic) IBOutlet NSDate *timeAgoDate;
 
 
 @property (strong, nonatomic) Tweet *tweet;

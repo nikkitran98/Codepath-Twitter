@@ -26,6 +26,7 @@
 -(void)configureCell: (Tweet *)tweet {
     _tweet = tweet;
     
+    
     self.name.text = tweet.user.name;
     self.screenName.text = [NSString stringWithFormat:@"@%@", tweet.user.screenName];
     self.createdAt.text = tweet.createdAtString;
