@@ -96,6 +96,11 @@
     [[APIManager shared] logout];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - Navigation
 
@@ -109,14 +114,13 @@
         composeController.delegate = self;
     }
     else if([segue.identifier isEqual:@"tweetDetails"]) {
-        TweetViewController *tweetViewController = [segue destinationViewController];
+        UINavigationController *navigationController = [segue destinationViewController];
+        TweetViewController *tweetViewController = navigationController.viewControllers[0];
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tweetView indexPathForCell:tappedCell];
         Tweet *tweet = self.tweets[indexPath.row];
         tweetViewController.tweet = tweet;
     }
-    
-    
 }
 
 

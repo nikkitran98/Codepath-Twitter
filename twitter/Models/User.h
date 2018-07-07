@@ -18,6 +18,10 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *screenName;
 @property (strong, nonatomic) NSURL *profileURL;
+@property int followingCount;
+@property int followersCount;
+@property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) NSURL *bannerPicURL;
 
 // Add any additional properties here
 

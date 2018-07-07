@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     
+    // calls api account details
     [[APIManager shared] getAccountDetails:^(User *user, NSError *error) {
         if (user) {
             self.user = user;
@@ -30,12 +31,25 @@
             self.profileImage.image = nil;
             self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
             [self.profileImage setImageWithURL:self.user.profileURL];
+            
+            self.bannerImage.image = nil;
+            [self.bannerImage setImageWithURL:self.user.bannerPicURL];
+            
+            // bio, followers and following count
+            self.followingCount.text = [NSString stringWithFormat:@"%d", self.user.followingCount];
+            
+            self.followersCount.text = [NSString stringWithFormat:@"%d", self.user.followersCount];
+            
+            self.bio.text = self.user.bio;
+            
             NSLog(@"Yo");
         }
         else {
             NSLog(@"Failed");
         }
     }];
+    
+    // calls banner image api path
     
 }
 
